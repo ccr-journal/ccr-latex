@@ -1,10 +1,13 @@
 % Template for articles for CCR (Computational Communication Research)
-% Version 0.02
+% Version 0.04
 
 % This file contains information such as author, title, etc.
 % Edit the body.tex file to add the contents (or change the \input{body} below)
 
 \documentclass{ccr}
+% To produce an anonymised manuscript for peer review (with watermark and
+% line numbers), use the review class option instead:
+% \documentclass[review]{ccr}
 
 % Note - lines starting with a % are completely ignored by latex and function as comments
 % See https://www.overleaf.com/read/hmwdsgcqkxrd for a complete example article
@@ -14,12 +17,16 @@
 % Regular metadata (title, authors etc)
 \title{Title of your article}
 \shorttitle{Short title for footer}
-\authorsnames{First author, Second author, Third author}
+\authorsnames{First Author, Second Author, Third Author}
 % Short author list for footer
-\shortauthors{Author \& Second}
+\shortauthors{First et al.}
 
-% Note that you need to provide as many affiliations as authors
-% If multiple authors have the same affiliation, please copy that record as needed
+% Provide one affiliation entry per author, in the same order as \authorsnames.
+% If two or more authors share an affiliation, just repeat the same string --
+% the class automatically deduplicates them and assigns a single numbered
+% superscript. In the example below, authors 1 and 2 share one affiliation
+% and author 3 has another, so the title block will render with superscripts
+% 1, 1, 2 and two affiliation lines beneath.
 \authorsaffiliations{
   {Department of Communication Science, Some University, Somewhere},
   {Department of Communication Science, Some University, Somewhere},
