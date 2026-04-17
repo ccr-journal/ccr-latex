@@ -2,6 +2,8 @@
 
 LaTeX template for [Computational Communication Research (CCR)](https://journal.computationalcommunication.org/), a peer-reviewed, open-access, community-owned journal publishing articles on computational methods in communication research, published by Amsterdam University Press and founded by the ICA Computational Methods Division.
 
+Please see the [author guide](author_guide.md) for detailed instructions on how to prepare a manuscript for publication. 
+
 ## Using the template
 
 ### Overleaf (recommended)
