@@ -27,8 +27,6 @@ Requires a TeX Live distribution with `biblatex-apa`, `biber`, `erewhon`, and `n
 - **`main.tex`** — preamble: title, authors, affiliations, abstract, keywords, bibliography, packages
 - **`body.tex`** — article body (sections, figures, tables, citations)
 
-**Affiliations deduplicate automatically.** List one entry per author in `\authorsaffiliations{...}` in the same order as `\authorsnames{...}`. If two or more authors share an affiliation, repeat the same string verbatim — the class collapses duplicates and assigns a single italic alphabetic marker (a, b, c, …) in the title block.
-
 ### Anonymised peer review
 
 CCR requires [anonymised manuscripts for peer review](https://journal.computationalcommunication.org/about/submissions). To produce an anonymised build — with author/affiliation info suppressed, line numbers enabled, and a draft watermark — use the `review` class option in `main.tex`:
