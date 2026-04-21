@@ -39,9 +39,8 @@ Remove the option when preparing the final camera-ready version.
 
 ## Quarto authors
 
-A parallel Quarto template lives at [ccr-journal/ccr-quarto](https://github.com/ccr-journal/ccr-quarto) and wraps the same `ccr.cls`. The two templates render identical title blocks; use whichever fits your workflow.
+A parallel Quarto template lives at [ccr-journal/ccr-quarto](https://github.com/ccr-journal/ccr-quarto) and wraps the same `ccr.cls`. 
 
-`ccr.cls` itself is maintained in this repository. A GitHub Actions workflow in `ccr-quarto` automatically mirrors changes downstream by opening a pull request whenever the class changes, keeping the two templates in sync. If you want to edit the class, do it here.
 
 ## Reporting issues
 
