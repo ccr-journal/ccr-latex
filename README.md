@@ -8,7 +8,9 @@ Please see the [author guide](author_guide.md) for detailed instructions on how 
 
 ### Overleaf (recommended)
 
-Open the [CCR template on Overleaf](https://www.overleaf.com/latex/templates/computational-communication-research-template/rdypnbpwjqrd) and click **Open as Template**. Overleaf clones it into your account; edit `main.tex` to begin.
+1. [Download this repository as a ZIP](https://github.com/ccr-journal/ccr-latex/archive/refs/heads/main.zip)
+2. In Overleaf, click **New Project → Upload Project** and select the downloaded ZIP
+3. Open `main.tex` and begin editing
 
 ### Locally
 
