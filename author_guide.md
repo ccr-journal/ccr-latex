@@ -204,6 +204,42 @@ The score must be greater than 0.5.
 
 ---
 
+## Acknowledgements
+
+Use `\acknowledgements{...}` in the body, placed before `\printbibliography`:
+
+```latex
+\acknowledgements{This research was supported by grant XYZ from the ACME Foundation.}
+
+\printbibliography
+```
+
+The PDF renders this as an unnumbered "Acknowledgements" section. In review mode (when the class is loaded with the `review` option) the block is suppressed to preserve anonymity. In the XML output it becomes `<back><ack><p>...</p></ack>`.
+
+Do not also create a `\section{Acknowledgements}` — the macro already handles the heading.
+
+---
+
+## Supplementary material
+
+Use `\supplementarymaterial{...}` to tag a caption + link as supplementary material. The macro renders its argument inline in the PDF (transparently — it adds no formatting of its own), and additionally emits a `<supplementary-material>` entry in the XML.
+
+Typical usage is inside a footnote, so the URL shows up to readers of the PDF while also being tagged as supplementary material in the XML:
+
+```latex
+We preregistered the study before data collection.\footnote{\supplementarymaterial{All materials can be found at: \url{https://doi.org/10.17605/OSF.IO/TQRJ3}}}
+```
+
+The macro can also be used outside a footnote — its content renders in place:
+
+```latex
+\supplementarymaterial{Data and analysis code: \url{https://doi.org/10.17605/OSF.IO/...}}
+```
+
+The argument should generally contain exactly one `\url` link. Use multiple `\supplementarymaterial` commands if there are multiple links (potentially within the same footnote).
+
+---
+
 ## Non-Latin scripts
 
 Unicode text (Arabic, Hebrew, Chinese, etc.) works correctly if you write it directly as UTF-8 in your `.tex` file. Do not use the `arabtex` or `cjhebrew` transliteration packages — they use custom encoding schemes that cannot be converted to Unicode by the XML converter. If your source uses these packages, replace the transliterated text with Unicode characters.
