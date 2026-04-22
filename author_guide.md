@@ -7,7 +7,7 @@ This guide describes how to write LaTeX that converts cleanly to JATS XML for CC
 Your article folder should contain at minimum:
 
 ```
-main.tex          % metadata: title, authors, abstract, keywords, \doi{}
+main.tex          % metadata: title, authors, abstract, keywords
 body.tex          % article body, figures, tables
 bibliography.bib  % BibTeX references
 ```
@@ -17,10 +17,30 @@ The `main.tex` preamble must include:
 ```latex
 \documentclass{ccr}
 \addbibresource{bibliography.bib}
-\doi{10.5117/CCR<year>.<vol>.<num>.<AUTHOR>}
 ```
 
-The converter derives the output filename and article metadata from `\doi{}`. This line is provided by the journal.
+Journal metadata (DOI, volume, issue, dates, …) is optional — see [Journal metadata](#journal-metadata) below.
+
+---
+
+## Journal metadata
+
+The `ccr` class provides a handful of metadata macros. Their values appear in the first-page header/footer of the PDF and are carried into the JATS XML:
+
+| Macro | Purpose | Example |
+|---|---|---|
+| `\doi{...}` | Article DOI | `\doi{10.5117/CCR2026.1.2.SMITH}` |
+| `\volume{...}` | Journal volume | `\volume{6}` |
+| `\pubnumber{...}` | Issue number | `\pubnumber{2}` |
+| `\pubyear{...}` | Year of publication | `\pubyear{2026}` |
+| `\firstpage{...}` | Starting page in the journal | `\firstpage{125}` |
+| `\datereceived{...}` | Manuscript submission date, ISO 8601 | `\datereceived{2025-05-28}` |
+| `\dateaccepted{...}` | Acceptance date | `\dateaccepted{2026-01-14}` |
+| `\datepublished{...}` | Publication date | `\datepublished{2026-02-16}` |
+
+**Authors normally do not need to set these manually.** The journal fills them in during copyediting from the OJS submission record. If you leave them out, the PDF renders with placeholder values for volume/issue/year/DOI, and the `Manuscript received …, accepted …, published …` footer line is simply omitted. Nothing breaks — the final, copyedited version will have the real values.
+
+If you compile locally and want a realistic-looking preview, you can set any or all of them yourself.
 
 ---
 
