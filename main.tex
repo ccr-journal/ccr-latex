@@ -17,21 +17,30 @@
 % Regular metadata (title, authors etc)
 \title{Title of your article}
 \shorttitle{Short title for footer}
-\authorsnames{First Author, Second Author, Third Author}
 % Short author list for footer
 \shortauthors{First et al.}
 
-% Provide one affiliation entry per author, in the same order as \authorsnames.
-% If two or more authors share an affiliation, just repeat the same string --
-% the class automatically deduplicates them and assigns a single numbered
-% superscript. In the example below, authors 1 and 2 share one affiliation
-% and author 3 has another, so the title block will render with superscripts
-% 1, 1, 2 and two affiliation lines beneath.
-\authorsaffiliations{
-  {Department of Communication Science, Some University, Somewhere},
-  {Department of Communication Science, Some University, Somewhere},
-  {Department of Communication Science, Another University, Somewhere Else},
-}
+% Authors and their affiliations. Each \addauthor cites one or more affiliation
+% labels (defined below with \addaffiliation). Labels are arbitrary keys -- use
+% mnemonic short names. The same label can be cited by multiple authors and a
+% single author can cite multiple labels.
+\addauthor[someu]{First Author}
+\addauthor[someu]{Second Author}
+\addauthor[anotheru,someu]{Third Author}
+
+% Affiliations. Signature: \addaffiliation{label}[Department]{Organisation}{ISO-CC}
+% - The optional [Department] can be omitted.
+% - The country code is a 2-letter ISO 3166-1 alpha-2 code (NL, US, DE, GB, ...).
+\addaffiliation{someu}[Department of Communication Science]{Some University}{NL}
+\addaffiliation{anotheru}[Department of Communication Science]{Another University}{US}
+
+% Legacy syntax (still supported -- omit if you use \addauthor / \addaffiliation):
+% \authorsnames{First Author, Second Author, Third Author}
+% \authorsaffiliations{
+%   {Department of Communication Science, Some University, Somewhere},
+%   {Department of Communication Science, Some University, Somewhere},
+%   {Department of Communication Science, Another University, Somewhere Else},
+% }
 
 \abstract{
 A brief abstract that describes the study and main findings.

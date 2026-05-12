@@ -23,6 +23,54 @@ Journal metadata (DOI, volume, issue, dates, …) is optional — see [Journal m
 
 ---
 
+## Authors and affiliations
+
+Authors are declared one at a time, and each cites one or more affiliation labels:
+
+```latex
+\addauthor[uva,vu]{First Author}
+\addauthor[uva]{Second Author}
+\addauthor[mit]{Third Author}
+
+\addaffiliation{uva}[Department of Communication Science]{University of Amsterdam}{NL}
+\addaffiliation{vu}{Vrije Universiteit Amsterdam}{NL}
+\addaffiliation{mit}[Department of Political Science]{Massachusetts Institute of Technology}{US}
+```
+
+The example above renders as `First Author`<sup>*a,b*</sup>, `Second Author`<sup>*a*</sup>, `Third Author`<sup>*c*</sup>, with the three affiliations listed below the author line. Letters are auto-assigned in order of first reference.
+
+### `\addauthor[labels]{Name}`
+
+- The optional `[…]` is a comma-separated list of affiliation labels.
+- **At least one label is required.** `\addauthor{Name}` (no `[…]`) raises a class error. If an author has no formal affiliation, declare one (e.g. `\addaffiliation{indep}{Independent Researcher}{NL}`) and cite it.
+- The same author may cite multiple labels: `\addauthor[uva,mit]{Name}` produces two superscripts.
+
+### `\addaffiliation{label}[Department]{Organisation}{Country}`
+
+- **`label`** — arbitrary mnemonic key (e.g. `uva`, `vu`, `mit`). Used by `\addauthor` to reference this affiliation.
+- **`[Department]`** — optional sub-unit; omit if not applicable.
+- **`Organisation`** — university or institution name (mandatory).
+- **`Country`** — 2-letter [ISO 3166-1 alpha-2](https://www.iso.org/iso-3166-country-codes.html) country code (mandatory). Examples: `NL`, `US`, `DE`, `GB`, `JP`. Lowercase input is accepted and uppercased automatically; an unknown code raises a class error so typos are caught early.
+
+The PDF renders each affiliation as `Department, Organisation, CC` (with the department omitted cleanly when not provided).
+
+### Legacy syntax (still supported)
+
+The previous CSV-based API continues to work for older manuscripts:
+
+```latex
+\authorsnames{First Author, Second Author, Third Author}
+\authorsaffiliations{
+  {Department of Communication Science, University of Amsterdam},
+  {Department of Communication Science, University of Amsterdam},
+  {Department of X, MIT},
+}
+```
+
+It requires one affiliation entry per author (deduplicated by exact string match) and does not support multi-affiliation authors. The class auto-detects which API is in use; do not mix `\authorsnames` with `\addauthor` in the same document.
+
+---
+
 ## Journal metadata
 
 The `ccr` class provides a handful of metadata macros. Their values appear in the first-page header/footer of the PDF and are carried into the JATS XML:
