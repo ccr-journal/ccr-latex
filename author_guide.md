@@ -50,7 +50,7 @@ The example above renders as `First Author`<sup>*a,b*</sup>, `Second Author`<sup
 - **`label`** — arbitrary mnemonic key (e.g. `uva`, `vu`, `mit`). Used by `\addauthor` to reference this affiliation.
 - **`[Department]`** — optional sub-unit; omit if not applicable.
 - **`Organisation`** — university or institution name (mandatory).
-- **`Country`** — 2-letter [ISO 3166-1 alpha-2](https://www.iso.org/iso-3166-country-codes.html) country code (mandatory). Examples: `NL`, `US`, `DE`, `GB`, `JP`. Lowercase input is accepted and uppercased automatically; an unknown code raises a class error so typos are caught early.
+- **`Country`** — 2-letter [ISO 3166-1 alpha-2](https://www.iso.org/iso-3166-country-codes.html) country code (mandatory). Examples: `NL`, `US`, `DE`, `GB`, `JP`. Lowercase input is accepted and uppercased automatically; an unknown code raises a class error so typos are caught early. `XK` is also accepted for Kosovo (the de facto code used by the EU, IMF, World Bank, and SWIFT; not in ISO 3166-1).
 
 The PDF renders each affiliation as `Department, Organisation, CC` (with the department omitted cleanly when not provided).
 
